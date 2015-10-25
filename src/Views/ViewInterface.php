@@ -1,6 +1,6 @@
-<?php namespace Battleships\Views;
-
-interface ViewInterface {
-
-    function render();
+<?php namespace Battleships\Views;
+
+interface ViewInterface {
+
+    function render();
 }
