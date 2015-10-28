@@ -1,10 +1,11 @@
 <?php namespace Battleships\Controllers;
 
+use Battleships\Controllers\ControllerInterface;
 use Battleships\Core\Game;
 use Battleships\Core\Renderers\SimpleBoardRenderer;
 use Battleships\Views\WebView;
 
-class WebController
+class WebController implements ControllerInterface
 {
     function __construct($gridSize) {
         $this->game = new Game($gridSize, new SimpleBoardRenderer);
