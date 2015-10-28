@@ -1,16 +1,17 @@
 <?php namespace Battleships\Views;
 
-class WebView implements ViewInterface {
-
+class WebView implements ViewInterface
+{
     const TEMPLATE = 'src/Templates/battleships.html';
-    private $data = Array();
+    private $data = array();
 
-    function __construct($data = Array()) {
+    public function __construct($data = array())
+    {
         $this->data = $data;
-
     }
 
-    function render($data = Array()) {
+    public function render($data = array())
+    {
         if (! empty($data)) {
             $this->data = $data;
         }
@@ -18,14 +19,9 @@ class WebView implements ViewInterface {
         extract($this->data);
 
         ob_start();
-        include( self::TEMPLATE);
+        include(self::TEMPLATE);
         $content = ob_get_contents();
         ob_end_clean();
         echo $content;
-
     }
-
 }
-
-
-

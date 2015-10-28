@@ -1,4 +1,7 @@
 {
+    "name": "Battleships",
+    "version": "0.1",
+    
     "autoload": {
         "psr-4": {"Battleships\\": "src/"}
     }

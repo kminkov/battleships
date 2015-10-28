@@ -1,21 +1,18 @@
 <html>
 
 <body>
-<?php echo $user_output ?>
-<pre>
-
+    <div> <?php echo $shotResult ?> </div>
+    <pre>
 <?php echo $grid ?>
-
-</pre>
-
-<form name="input" action="index.php" method="post">
-
-Enter coordinates (row, col), e.g. A5 <input type="input" size="5" name="coord" autocomplete="off" autofocus />
-
-<input type="submit" value='Shoot'>
-
-</form>
-
+    </pre> 
+    <?php if ($gameOver): ?>
+        Well done! You completed the game in <?php echo $shotsToSuccess; ?> shots. 
+        <a href="/"> Play again?</a>
+    <?php else: ?>
+        <form name="input" action="index.php" method="post">
+            Enter coordinates (row, col), e.g. A5 <input type="input" size="5" name="coord" autocomplete="off" autofocus />
+            <input type="submit" value='Shoot'>
+        </form>
+    <?php endif; ?>
 </body>
-
 </html>
